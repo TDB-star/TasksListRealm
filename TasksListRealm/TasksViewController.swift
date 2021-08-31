@@ -39,17 +39,7 @@ class TasksViewController: UITableViewController {
 
         return cell
     }
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-   
+       
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let task = tasks[indexPath.row]
         if editingStyle == .delete {
@@ -60,7 +50,6 @@ class TasksViewController: UITableViewController {
         }    
     }
     
-
     @objc func addButtonPressed() {
         showTaskAlert(with: "Add new task", "", "Save", "Cancel", "Enter task") { text in
             if !text.isEmpty {
@@ -75,9 +64,8 @@ class TasksViewController: UITableViewController {
         let rowIndex = IndexPath(row: tasks.count - 1, section: 0)
         tableView.insertRows(at: [rowIndex], with: .automatic)
     }
-   
-
 }
+
 extension TasksViewController {
     
         func showTaskAlert (
